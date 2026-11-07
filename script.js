@@ -18,6 +18,7 @@ const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const toggleBtn = document.getElementById("togglePassword");
 const message = document.getElementById("message");
+const REGEX_CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Muestra un mensaje usando clases CSS (no estilos en línea)
 function mostrarMensaje(texto, tipo) {
@@ -46,6 +47,18 @@ form.addEventListener("submit", function (event) {
 
   if (email === "" || password === "") {
     mostrarMensaje("Completa todos los campos.", "error");
+    return;
+  }
+
+  if (!REGEX_CORREO.test(email)) {
+    mostrarMensaje("Ingresa un correo con formato válido.", "error");
+    emailInput.focus();
+    return;
+  }
+
+  if (password.length < 8) {
+    mostrarMensaje("La contraseña debe tener al menos 8 caracteres.", "error");
+    passwordInput.focus();
     return;
   }
 
