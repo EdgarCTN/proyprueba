@@ -15,7 +15,9 @@ body {
 }
 
 .contenedor {
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
+  box-sizing: border-box;
   margin: 0 auto;
   background: white;
   padding: 20px;
@@ -57,4 +59,36 @@ input {
 
 .mensaje-exito {
   color: green;
+}
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: #222222;
+}
+
+.ayuda {
+  margin: 0 0 16px;
+  color: #555555;
+  font-size: 14px;
+}
+
+.fila-password input {
+  flex: 1;
+  min-width: 0;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #1a73e8;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+  }
+  h1 {
+    font-size: 20px;
+  }
 }
