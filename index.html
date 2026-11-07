@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+  Proyecto: proyprueba (línea base en main) - Laboratorio 11
+  Archivo:  index.html
+  Rama de trabajo asignada: feature/estructura-login
+  Responsable: Torres Vásquez, Ana Lucía (Tarapoto)
+  Nota: no cambiar los id (loginForm, email, password, togglePassword, btnEnviar, message)
+        ni las clases (contenedor, fila-password) sin coordinar con el equipo.
+  Nota: el formulario lleva novalidate para que la validación la haga script.js
+        (si se usa type="email", el navegador no bloqueará el envío antes que el JS).
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Login</h1>
+
+    <form id="loginForm" novalidate>
+      <input type="text" id="email" placeholder="Correo">
+
+      <div class="fila-password">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button type="button" id="togglePassword">Mostrar</button>
+      </div>
+
+      <button type="submit" id="btnEnviar">Entrar</button>
+    </form>
+
+    <p id="message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
